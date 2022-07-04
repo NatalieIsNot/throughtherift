@@ -1,0 +1,1 @@
+$('.battlescreen').append()

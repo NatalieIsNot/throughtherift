@@ -1,0 +1,22 @@
+{
+  "name": "throughtherift",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run tweego:watch\" \"npm run serve\"",
+    "tweego:watch": "tweego -w -o dist/index.html --head=\"src/Engine/head.txt\" src modules/util",
+    "serve": "live-server --port=59009 --no-browser dist/"
+  },
+  "keywords": [
+    "SugarCube",
+    "Twee"
+  ],
+  "author": "NatalieIsNot",
+  "license": "MIT",
+  "dependencies": {
+    "@types/twine-sugarcube": "^2.36.1",
+    "concurrently": "^7.0.0",
+    "jquery": "^3.6.0",
+    "sass": "^1.49.9"
+  }
+}

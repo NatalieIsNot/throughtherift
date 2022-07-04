@@ -1,0 +1,72 @@
+::pwoList [nobr]
+<<script>>
+const listMain = [],
+      listTools = [],
+      listOther = [],
+      lookup = Story.lookupWith(function () {return true});
+for (let i = 0; i < lookup.length; i++) {
+  if (lookup[i].title.match(/^(newgamesetup|oldsavepage|eoc|disclaimer|appearance|allnpcspeech|credits|ngamesetup|memories|newstorynote|mcdynavwindow|setupoptions|verdiscrep|PassageDone|PassageFooter|PassageHeader|PassageReady|StoryAuthor|StoryBanner|StoryCaption|StoryData|StoryDisplayTitle|StoryInit|StoryInterface|StoryMenu|StorySettings|StoryShare|StorySubtitle|StoryTitle)$|^cliffhang|dialog/)) {
+    listOther.push(lookup[i].title);
+  }
+  else if (lookup[i].title.match(/^(NewItemMaker|MemRefConsole)$|^pwo|^test/)) {
+    listTools.push(lookup[i].title);
+  }
+  else {
+    listMain.push(lookup[i].title);
+  }
+}
+/*  Main Group */
+const header1 = $('<h3 style="margin-top:0px;">Main</h3>').appendTo(output);
+let tableMain = '<table>';
+var row = "";
+for (let r = 0; r < listMain.length; r++) {
+  row += `<td>[[${listMain[r]}]]</td>`;
+  if (r % 3 === 2) {
+    tableMain += `<tr>${row}</tr>`;
+    row = "";
+}}
+if (row != "") { tableMain += `<tr>${row}</tr>`; }
+tableMain += "</table>";
+$(output).wiki(tableMain);
+
+/* Tools Group */
+
+const header3 = $('<h3>Dev Tools</h3>').appendTo(output);
+let tableTools = '<table>';
+var row = "";
+for (let r = 0; r < listTools.length; r++) {
+  row += `<td>[[${listTools[r]}]]</td>`;
+  if (r % 3 === 2) {
+    tableTools += `<tr>${row}</tr>`;
+    row = "";
+}}
+if (row != "") { tableTools += `<tr>${row}</tr>`; }
+tableTools += "</table>";
+$(output).wiki(tableTools);
+
+/* Misc Group */
+const header4 = $('<h3>Other/System</h3>').appendTo(output);
+let tableOther = '<table>';
+var row = "";
+for (let r = 0; r < listOther.length; r++) {
+  row += `<td>[[${listOther[r]}]]</td>`;
+  if (r % 3 === 2) {
+    tableOther += `<tr>${row}</tr>`;
+    row = "";
+}}
+if (row != "") { tableOther += `<tr>${row}</tr>`; }
+tableOther += "</table>";
+$(output).wiki(tableOther);
+<</script>>
+<style>
+#passage-pwolist > table {
+  width: 100%
+}
+#passage-pwolist > table > tr > td {
+  border-left: 1px solid;
+  padding: 0px !important;
+  padding-left: 10px !important;
+  width: 33%;
+}
+</style>
+

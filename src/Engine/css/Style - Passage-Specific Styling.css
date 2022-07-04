@@ -1,0 +1,15 @@
+div.starttitle {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 2em;
+  line-height: 1;
+}
+
+div.startsubtitle {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  line-height: 1;
+  margin-top: -1em;
+}

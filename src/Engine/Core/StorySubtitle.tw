@@ -1,0 +1,5 @@
+::StorySubtitle
+by NatalieIsNot
+Version <<print Config.saves.version.major + "." + Config.saves.version.minor + "." + Config.saves.version.patch>>
+
+/* <center><table id="stbuttontable"><td><a target="_blank" rel="noreferrer" class="link-external link-image" href="https://discord.gg/nXWfbvZD6r" tabindex="0" title="Discord" alt="Discord"><img id="cta-icon" src="img/sys/icon-discord.svg"></a></td><td><a target="_blank" rel="noreferrer" class="link-external link-image" href="https://www.patreon.com/RamblingDeviant" tabindex="0"><img id="cta-icon" src="img/sys/icon-patreon.svg" title="Patreon" alt="Patreon"></a></td></table></center> */
